@@ -1,0 +1,100 @@
+.auth {
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(23, 216, 200);
+    height: 100vh;
+}
+
+.form-container {
+    top: 200px;
+    left: 40%;
+    width: 350px;
+    padding: 60px 40px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 5px 15px 20px 4px rgba(0, 0, 0, 0.6);
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.auth-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    color: rgb(10, 220, 190);
+}
+
+.auth-form input {
+    height: 35px;
+    border-radius: 2px;
+    border: none;
+    background-color: rgb(226, 223, 223);
+    color: black;
+    padding: 0px 10px 0px 0px;
+    text-indent: 10px;
+}
+
+.auth-form ul {
+    list-style: none;
+    color: red;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.auth-form ul li {
+    margin: 3px;
+}
+
+.auth-btn {
+    width: 200px;
+}
+
+.LoginBtn {
+    display: block;
+    padding: 20px 30px;
+    font-size: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    background-color: rgb(63, 117, 109);
+    color: white;
+}
+
+.LoginBtn:hover {
+    border: 2px solid blue;
+}
+
+.LoginBtn:active {
+    transform: scale(0.95);
+    transition: all 0.2s;
+}
+
+select {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    border: none;
+    background-color: rgb(23, 180, 160);
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 10px;
+    font-family: sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+select option {
+    padding: 10px;
+    background-color: rgb(23, 180, 160);
+}

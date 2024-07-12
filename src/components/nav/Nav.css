@@ -1,0 +1,96 @@
+.language-select {
+    padding: 5px 30px 5px 10px;
+    appearance: none;
+    background: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 width%3D%2210%22 height%3D%2210%22 viewBox%3D%220 0 10 10%22%3E%3Cpath fill%3D%22%23000%22 d%3D%22M0 2h10L5 7%22/%3E%3C/svg%3E")
+        no-repeat right 10px center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.36px;
+    text-align: left;
+}
+
+.nav_hr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.nav__div {
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__div a {
+    font-family: "Poppins", sans-serif;
+}
+
+.nav__ul {
+    padding: 20px 0px 25px 0px;
+    padding-top: 40px;
+}
+
+.nav__ul {
+    width: 100%;
+}
+
+.nav__ul ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__ul ul li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.nav__ul ul .profile a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav__ul ul .profile a {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.36px;
+}
+
+.nav__ul ul .profile img {
+    width: 20px;
+    height: 20px;
+}
+
+.nav__ul ul .blue_icon a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+}
+
+.nav__ul ul li a {
+    text-decoration: none;
+    color: black;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.36px;
+}
+
+.active {
+    border-bottom: 1px solid black;
+}

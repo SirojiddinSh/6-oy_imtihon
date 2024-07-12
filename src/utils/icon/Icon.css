@@ -1,0 +1,27 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background-color: #40bfff;
+    border-radius: 16px;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 19.56px;
+    height: 19.56px;
+    background-color: white;
+    border-radius: 4px;
+    transform: rotate(90deg);
+}
+
+.inner-icon {
+    width: 7px;
+    height: 7px;
+    background-color: #40bfff;
+    transform: rotate(-90deg);
+}

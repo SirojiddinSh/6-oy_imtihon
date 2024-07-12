@@ -1,0 +1,82 @@
+.auth {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    width: 420px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.auth-title {
+    font-family: "Inter", sans-serif;
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 62.93px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.auth-form input {
+    width: 420px;
+    height: 54px;
+    border-radius: 2px;
+    border: none;
+    color: black;
+    padding: 0px 20px 0px 20px;
+    border: 1px solid #dddddd;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: left;
+}
+
+.auth-form input:focus {
+    outline-color: #2f80ed;
+}
+
+.auth-form ul {
+    list-style: none;
+    color: red;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.auth-form ul li {
+    margin: 3px;
+}
+
+.auth-btn {
+    width: 200px;
+}
+
+.LoginBtn {
+    display: block;
+    padding: 20px 30px;
+    font-size: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    background-color: rgb(63, 117, 109);
+    color: white;
+}
+
+.LoginBtn:hover {
+    border: 2px solid blue;
+}
+
+.LoginBtn:active {
+    transform: scale(0.95);
+    transition: all 0.2s;
+}

@@ -1,0 +1,29 @@
+.button {
+    width: 420px;
+    height: 54px;
+    border: none;
+    border-radius: 6px;
+    border: 1px solid #2f80ed;
+    background-color: #2f80ed;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24.2px;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+.button:disabled {
+    opacity: 0.5;
+}
