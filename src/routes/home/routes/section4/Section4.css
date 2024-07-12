@@ -1,0 +1,56 @@
+.section4 {
+    padding: 100px 0px 350px 0px;
+}
+
+.section4__title {
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 52.5px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section4__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.section4__card {
+    width: 400px;
+    height: 180px;
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.section4__card img {
+    width: 154px;
+    height: 154px;
+}
+
+.section4__card h3 {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26.8px;
+}
+
+.product-rating2 {
+    margin-bottom: 5px;
+}
+
+.section4__card-text-price span {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    color: #ff4858;
+}
+
+.section4__card-text-price del {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.36px;
+    color: #c1c8ce;
+    margin-left: 10px;
+}

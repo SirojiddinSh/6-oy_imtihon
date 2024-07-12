@@ -50,7 +50,7 @@ const Nav = () => {
                                 E-Comm
                             </NavLink>
                         </li>
-                        <li>
+                        <li className="cart">
                             <NavLink to="/cart">
                                 <GrCart />
                             </NavLink>

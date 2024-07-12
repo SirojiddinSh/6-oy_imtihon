@@ -16,12 +16,12 @@
     height: 19.56px;
     background-color: white;
     border-radius: 4px;
-    transform: rotate(90deg);
+    transform: rotate(-45deg);
 }
 
 .inner-icon {
     width: 7px;
     height: 7px;
     background-color: #40bfff;
-    transform: rotate(-90deg);
+    transform: rotate(-180deg);
 }

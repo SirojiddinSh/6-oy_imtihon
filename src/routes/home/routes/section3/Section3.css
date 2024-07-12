@@ -1,0 +1,49 @@
+.section3 {
+    padding: 250px 0px;
+}
+
+.section3__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section3__content {
+    width: 195px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section3__content h3 {
+    font-size: 27px;
+    font-weight: 500;
+    line-height: 40.5px;
+}
+
+.section3__content p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.92px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.section3__content img {
+    margin-bottom: 40px;
+}
+
+.car {
+    width: 100px;
+    height: 65px;
+}
+
+.dollar {
+    width: 69px;
+    height: 78px;
+}
+
+.user {
+    width: 68px;
+    height: 88px;
+}

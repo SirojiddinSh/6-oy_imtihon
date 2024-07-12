@@ -2,12 +2,18 @@ img: "https://s3-alpha-sig.figma.com/img/bb44/f22c/2fcbabaf010cb85f7ec0f7f985f24
 import React from "react";
 import BgImage from "./routes/bgImage/BgImage";
 import Section1 from "./routes/section1/Section1";
+import Section2 from "./routes/section2/Section2";
+import Section3 from "./routes/section3/Section3";
+import Section4 from "./routes/section4/Section4";
 
 const Home = () => {
     return (
         <>
             <BgImage />
             <Section1 />
+            <Section2 />
+            <Section3 />
+            <Section4 />
         </>
     );
 };

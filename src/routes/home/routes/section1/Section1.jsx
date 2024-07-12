@@ -1,8 +1,13 @@
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import "./Section1.css";
 import Container from "../../../../utils/container/Container";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import blueButton from "../../../../images/blue-button.png";
 
 let Section1 = () => {
+    let history = useNavigate();
+
     let fetchProducts = async (page, limit) => {
         try {
             let response = await fetch(
@@ -49,6 +54,32 @@ let Section1 = () => {
         }
     };
 
+    let renderStars = (rating) => {
+        let stars = [];
+        for (let i = 1; i <= 5; i++) {
+            stars.push(
+                <span key={i} className={i <= rating ? "star filled" : "star"}>
+                    &#9733;
+                </span>
+            );
+        }
+        return stars;
+    };
+
+    let handleHeartClick = (productId) => {
+        setProducts((prevProducts) =>
+            prevProducts.map((product) =>
+                product.id === productId
+                    ? { ...product, liked: !product.liked }
+                    : product
+            )
+        );
+    };
+
+    let handleAddToCart = (productId) => {
+        history.push("/cart");
+    };
+
     return (
         <section className="section1">
             <Container>
@@ -56,10 +87,42 @@ let Section1 = () => {
                 <div className="section1__cards">
                     {products.map((product) => (
                         <div className="section1__card" key={product.id}>
-                            <img src={product.image} alt="" />
+                            <div className="section1__card-overlay">
+                                <img src={product.image} alt="" />
+                                <div className="opacity">
+                                    <div className="section1__card-button1">
+                                        {product.liked ? (
+                                            <AiFillHeart
+                                                className="butunmasyurak"
+                                                onClick={() =>
+                                                    handleHeartClick(product.id)
+                                                }
+                                            />
+                                        ) : (
+                                            <AiOutlineHeart
+                                                className="butunyurak"
+                                                onClick={() =>
+                                                    handleHeartClick(product.id)
+                                                }
+                                            />
+                                        )}
+                                    </div>
+                                    <div className="section1__card-button2">
+                                        <img
+                                            src={blueButton}
+                                            alt=""
+                                            onClick={() =>
+                                                handleAddToCart(product.id)
+                                            }
+                                        />
+                                    </div>
+                                </div>
+                            </div>
                             <div className="section1__card-text">
                                 <h3>{product.name}</h3>
-                                <p>{product.rating}</p>
+                                <div className="product-rating">
+                                    {renderStars(product.rating)}
+                                </div>
                                 <div className="section1__card-text-price">
                                     <span className="span1">
                                         ${product.price}

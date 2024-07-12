@@ -5,7 +5,7 @@
 }
 
 .section1 {
-    padding: 180px 0px;
+    padding: 180px 0px 200px 0px;
 }
 
 .section1__title {
@@ -18,8 +18,8 @@
 
 .section1__card {
     width: 300px;
-    border: 3px solid #f9f9fa;
-    background-color: #f9f9fa;
+    border: 3px solid #f3f1f1;
+    background-color: #f3f1f1;
 }
 
 .section1__card img {
@@ -32,7 +32,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    padding: 5px 0px;
+    background-color: white;
 }
 
 .section1__card-text h3 {
@@ -45,7 +46,7 @@
 .section1__card-text-price {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .section1__card-text-price .span1 {
@@ -83,8 +84,89 @@
     font-weight: 500;
     line-height: 30px;
     text-align: left;
+    background-color: white;
 }
 
 .load-more-button:hover {
-    border-bottom: 1px solid #33a0ff;
+    border-bottom: 3px solid #33a0ff;
+}
+
+.product-rating {
+    display: flex;
+    justify-content: center;
+}
+
+.star {
+    font-size: 20px;
+    color: #ccc;
+    margin-right: 5px;
+}
+
+.star.filled {
+    color: #ffc600;
+}
+
+.section1__card-overlay {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section1__card-overlay img {
+    width: 294px;
+    height: 266px;
+    border-radius: 5px;
+}
+
+.section1__card-overlay .opacity {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 278px;
+    height: 220px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 2px;
+}
+
+.section1__card-overlay:hover {
+    .opacity {
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+.section1__card-button1 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgb(233, 228, 228);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section1__card-button2 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgb(233, 228, 228);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section1__card-button1 svg {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.section1__card-button2 img {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
 }

@@ -32,6 +32,8 @@
 
 .nav__div a {
     font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    text-decoration: none;
 }
 
 .nav__ul {
@@ -93,4 +95,9 @@
 
 .active {
     border-bottom: 1px solid black;
+}
+
+.cart svg {
+    width: 25px;
+    height: 25px;
 }
