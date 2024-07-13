@@ -5,20 +5,11 @@ import Section1 from "./routes/section1/Section1";
 import Section2 from "./routes/section2/Section2";
 import Section3 from "./routes/section3/Section3";
 import Section4 from "./routes/section4/Section4";
-import Cart from "../cart/Cart";
-import { useState } from "react";
 
 const Home = () => {
-    let [cartItems, setCartItems] = useState([]);
-
-    let addToCart = (item) => {
-        setCartItems([...cartItems, item]);
-    };
     return (
         <>
             <BgImage />
-            <Section1 addToCart={addToCart} />
-            <Cart cartItems={cartItems} />
             <Section2 />
             <Section3 />
             <Section4 />

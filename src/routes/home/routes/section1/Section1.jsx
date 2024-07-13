@@ -5,8 +5,11 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import blueButton from "../../../../images/blue-button.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 let Section1 = () => {
+    const { t } = useTranslation();
+
     let navigate = useNavigate();
 
     let fetchProducts = async (page, limit) => {
@@ -81,7 +84,7 @@ let Section1 = () => {
     return (
         <section className="section1">
             <Container>
-                <h2 className="section1__title">ALL PRODUCTS</h2>
+                <h2 className="section1__title">{t("ALL PRODUCTS")}</h2>
                 <div className="section1__cards">
                     {products.map((product) => (
                         <div className="section1__card" key={product.id}>

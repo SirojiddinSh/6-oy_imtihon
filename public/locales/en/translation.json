@@ -1,3 +1,25 @@
 {
-    "Register": "Register"
+    "Register": "Register",
+    "My Profile": "My Profile",
+    "ALL PRODUCTS": "ALL PRODUCTS",
+    "Adidas Men Running Sneakers": "Adidas Men Running Sneakers",
+    "Performance and design. Taken right to the edge.": "Performance and design. Taken right to the edge.",
+    "SHOP NOW": "SHOP NOW",
+    "FREE SHIPPING": "FREE SHIPPING",
+    "100% REFUND": "100% REFUND",
+    "SUPPORT 24/7": "SUPPORT 24/7",
+    "MOST TOP RATED PRODUCTS": "MOST TOP RATED PRODUCTS",
+    "Username": "Username",
+    "Password": "Password",
+    "Phone": "Phone",
+    "is Admin?": "is Admin?",
+    "Street": "Street",
+    "Apartment": "Apartment",
+    "City": "City",
+    "Country": "Country",
+    "register": "register",
+    "At least 3 characters": "At least 3 characters",
+    "At least one uppercase letter": "At least one uppercase letter",
+    "At least one lowercase letter": "At least one lowercase letter",
+    "At least 8 characters": "At least 8 characters"
 }

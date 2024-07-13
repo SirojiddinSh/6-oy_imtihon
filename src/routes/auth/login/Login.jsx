@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Button from "../../../utils/button/Button";
+import { useTranslation } from "react-i18next";
 import "./Login.css";
 
 const Login = () => {
+    const { t } = useTranslation();
+
     const [passwordErrors, setPasswordErrors] = useState({});
     const [emailErrors, setEmailErrors] = useState({});
     const [password, setPassword] = useState("");
@@ -78,24 +81,24 @@ const Login = () => {
                         />
                         <ul>
                             {emailErrors.length && (
-                                <li>At least 3 characters</li>
+                                <li>{t("At least 3 characters")}</li>
                             )}
                         </ul>
                         <input
                             type="password"
-                            placeholder="Password"
+                            placeholder={t("Password")}
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
                         <ul>
                             {passwordErrors.uppercase && (
-                                <li>At least one uppercase letter</li>
+                                <li>{t("At least one uppercase letter")}</li>
                             )}
                             {passwordErrors.lowercase && (
-                                <li>At least one lowercase letter</li>
+                                <li>{t("At least one lowercase letter")}</li>
                             )}
                             {passwordErrors.length && (
-                                <li>At least 8 characters</li>
+                                <li>{t("At least 8 characters")}</li>
                             )}
                         </ul>
                         <Button type="submit">Login</Button>

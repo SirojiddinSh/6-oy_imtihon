@@ -1,8 +1,11 @@
 import "./Register.css";
 import Button from "../../../utils/button/Button";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Register = () => {
+    const { t } = useTranslation();
+
     let [username, setUsername] = useState("");
     let [email, setEmail] = useState("");
     let [password, setPassword] = useState("");
@@ -52,11 +55,11 @@ const Register = () => {
         <div className="auth">
             <div className="form-container">
                 <div className="form-wrapper">
-                    <h2 className="auth-title">Register</h2>
+                    <h2 className="auth-title">{t("Register")}</h2>
                     <form className="auth-form" onSubmit={handleRegister}>
                         <input
                             type="text"
-                            placeholder="Username"
+                            placeholder={t("Username")}
                             required
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
@@ -64,7 +67,7 @@ const Register = () => {
                         <ul></ul>
                         <input
                             type="password"
-                            placeholder="Password"
+                            placeholder={t("Password")}
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
@@ -78,28 +81,28 @@ const Register = () => {
                         />
                         <input
                             type="phone"
-                            placeholder="Phone"
+                            placeholder={t("Phone")}
                             value={phone}
                             onChange={(e) => setPhone(e.target.value)}
                             required
                         />
                         <input
                             type="text"
-                            placeholder="is Admin?"
+                            placeholder={t("is Admin?")}
                             value={isAdmin}
                             onChange={(e) => setIsAdmin(e.target.value)}
                             required
                         />
                         <input
                             type="text"
-                            placeholder="Street"
+                            placeholder={t("Street")}
                             value={street}
                             onChange={(e) => setStreet(e.target.value)}
                             required
                         />
                         <input
                             type="text"
-                            placeholder="Apartment"
+                            placeholder={t("Apartment")}
                             value={apartment}
                             onChange={(e) => setApartment(e.target.value)}
                             required
@@ -113,14 +116,14 @@ const Register = () => {
                         />
                         <input
                             type="text"
-                            placeholder="City"
+                            placeholder={t("City")}
                             value={city}
                             onChange={(e) => setCity(e.target.value)}
                             required
                         />
                         <input
                             type="text"
-                            placeholder="Country"
+                            placeholder={t("Country")}
                             value={country}
                             onChange={(e) => setCountry(e.target.value)}
                             required

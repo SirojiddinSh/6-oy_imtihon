@@ -1,8 +1,10 @@
 import "./Section4.css";
 import Container from "../../../../utils/container/Container";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 let Section4 = () => {
+    let { t } = useTranslation();
     let [topRatedProducts, setTopRatedProducts] = useState([]);
 
     useEffect(() => {
@@ -42,7 +44,9 @@ let Section4 = () => {
     return (
         <section className="section4">
             <Container>
-                <h2 className="section4__title">MOST TOP RATED PRODUCTS</h2>
+                <h2 className="section4__title">
+                    {t("MOST TOP RATED PRODUCTS")}
+                </h2>
                 <div className="section4__cards">
                     {topRatedProducts.map((product) => (
                         <div className="section4__card" key={product.id}>
