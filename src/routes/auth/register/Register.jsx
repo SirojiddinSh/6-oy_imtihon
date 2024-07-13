@@ -7,7 +7,6 @@ import { useTranslation } from "react-i18next";
 const Register = () => {
     let { t } = useTranslation();
 
-    let [state, dispatch] = useContext(AppContext);
     let [passwordErrors, setPasswordErrors] = useState({
         uppercase: true,
         lovercase: true,
@@ -32,13 +31,6 @@ const Register = () => {
             length: password.length >= 8 ? false : true,
         });
     }, [password]);
-
-    useEffect(() => {
-        setUsernameErrors({
-            capitalLetter: !/^[A-Z]/.test(username),
-            length: username.trim().length >= 0 ? false : true,
-        });
-    }, [username]);
 
     let handleRegister = async (e) => {
         e.preventDefault();
@@ -104,18 +96,7 @@ const Register = () => {
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                         />
-                        <ul>
-                            {usernameErrors.capitalLetter && (
-                                <li>
-                                    {t(
-                                        "First character should be uppercase letter"
-                                    )}
-                                </li>
-                            )}
-                            {usernameErrors.length && (
-                                <li>At least 3 characters</li>
-                            )}
-                        </ul>
+                        <ul></ul>
                         <input
                             type="password"
                             placeholder={t("Password")}
@@ -189,9 +170,7 @@ const Register = () => {
                             onChange={(e) => setCountry(e.target.value)}
                             required
                         />
-                        <Button type="submit" loading={state.loading}>
-                            {t("register")}
-                        </Button>
+                        <Button type="submit">{t("register")}</Button>
                     </form>
                 </div>
             </div>
