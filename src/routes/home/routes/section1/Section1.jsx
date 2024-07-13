@@ -4,6 +4,7 @@ import Container from "../../../../utils/container/Container";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import blueButton from "../../../../images/blue-button.png";
+import { Link } from "react-router-dom";
 
 let Section1 = () => {
     let navigate = useNavigate();
@@ -105,21 +106,16 @@ let Section1 = () => {
                                         )}
                                     </div>
                                     <div className="section1__card-button2">
-                                        <img
-                                            src={blueButton}
-                                            alt=""
-                                            onClick={() =>
-                                                (onClick = {
-                                                    productId,
-                                                    name,
-                                                    price,
-                                                })
-                                            }
-                                        />
+                                        <img src={blueButton} alt="" />
                                     </div>
                                 </div>
                             </div>
-                            <div className="section1__card-text">
+                            <div
+                                className="section1__card-text"
+                                onClick={() =>
+                                    navigate(`/single/${product.id}`)
+                                }
+                            >
                                 <h3>{product.name}</h3>
                                 <div className="product-rating">
                                     {renderStars(product.rating)}

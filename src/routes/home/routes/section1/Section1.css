@@ -34,6 +34,7 @@
     align-items: center;
     padding: 5px 0px;
     background-color: white;
+    cursor: pointer;
 }
 
 .section1__card-text h3 {

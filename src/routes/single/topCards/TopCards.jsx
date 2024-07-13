@@ -17,7 +17,7 @@ const TopCards = () => {
 
                 let sortedProducts = data
                     .sort((a, b) => b.rating - a.rating)
-                    .slice(0, 3);
+                    .slice(0, 4);
                 setTopRatedProducts(sortedProducts);
             } catch (error) {
                 throw new Error(error.message);
