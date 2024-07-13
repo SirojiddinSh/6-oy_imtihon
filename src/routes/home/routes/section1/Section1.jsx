@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import blueButton from "../../../../images/blue-button.png";
 
 let Section1 = () => {
-    let history = useNavigate();
+    let navigate = useNavigate();
 
     let fetchProducts = async (page, limit) => {
         try {
@@ -19,6 +19,7 @@ let Section1 = () => {
             let data = await response.json();
             return data;
         } catch (error) {
+            console.error(error.message);
             throw new Error(error.message);
         }
     };
@@ -76,10 +77,6 @@ let Section1 = () => {
         );
     };
 
-    let handleAddToCart = (productId) => {
-        history.push("/cart");
-    };
-
     return (
         <section className="section1">
             <Container>
@@ -93,14 +90,14 @@ let Section1 = () => {
                                     <div className="section1__card-button1">
                                         {product.liked ? (
                                             <AiFillHeart
-                                                className="butunmasyurak"
+                                                className="heart-icon filled"
                                                 onClick={() =>
                                                     handleHeartClick(product.id)
                                                 }
                                             />
                                         ) : (
                                             <AiOutlineHeart
-                                                className="butunyurak"
+                                                className="heart-icon"
                                                 onClick={() =>
                                                     handleHeartClick(product.id)
                                                 }
@@ -112,7 +109,11 @@ let Section1 = () => {
                                             src={blueButton}
                                             alt=""
                                             onClick={() =>
-                                                handleAddToCart(product.id)
+                                                (onClick = {
+                                                    productId,
+                                                    name,
+                                                    price,
+                                                })
                                             }
                                         />
                                     </div>

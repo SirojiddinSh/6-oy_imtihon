@@ -19,7 +19,6 @@
 .section4__card {
     width: 400px;
     height: 180px;
-    border: 1px solid red;
     display: flex;
     align-items: center;
     gap: 20px;

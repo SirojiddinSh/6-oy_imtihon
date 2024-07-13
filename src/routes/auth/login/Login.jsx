@@ -1,96 +1,70 @@
-import Button from "../../../utils/index";
-import { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import axios from "../../../api/index";
-import AppContext from "../../../context/store";
-import { useTranslation } from "react-i18next";
+import Button from "../../../utils/button/Button";
 import "./Login.css";
 
-const Login = ({ changeLang }) => {
-    let changeLangHandler = (e) => {
-        changeLang(e.target.value);
-    };
-    let { t } = useTranslation();
-
-    let [state, dispatch] = useContext(AppContext);
-    let [passwordErrors, setPasswordErrors] = useState({});
-    let [emailErrors, setEmailErrors] = useState("");
-
-    let [password, setPassword] = useState("");
-    let [email, setEmail] = useState("");
-
-    email.trim().includes("gmail.com");
+const Login = () => {
+    const [passwordErrors, setPasswordErrors] = useState({});
+    const [emailErrors, setEmailErrors] = useState({});
+    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
         setEmailErrors({
-            gmail: !email.trim().includes("gmail.com"),
             length: email.length >= 3 ? false : true,
         });
     }, [email]);
 
     useEffect(() => {
         setPasswordErrors({
-            lovercase: !/[a-z]/.test(password),
+            lowercase: !/[a-z]/.test(password),
             uppercase: !/[A-Z]/.test(password),
             length: password.length >= 8 ? false : true,
         });
     }, [password]);
 
-    let handleLogin = async (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
 
         try {
-            if (Object.values(passwordErrors).every((x) => x === false)) {
-                {
-                    dispatch({ type: "LOADING", loading: true });
+            if (
+                Object.values(emailErrors).every((x) => x === false) &&
+                Object.values(passwordErrors).every((x) => x === false)
+            ) {
+                let response = await fetch(
+                    "https://backend-e-commerce-production.up.railway.app/api/v1/users/login",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ email, password }),
+                    }
+                );
 
-                    let response = await axios.post("/auth/login", {
-                        password,
-                        email,
-                    });
-
-                    dispatch({
-                        type: "LOGIN_ACCESS_TOKEN",
-                        accessToken: response.data.access_token,
-                    });
-                    dispatch({
-                        type: "LOGIN_REFRESH_TOKEN",
-                        refreshToken: response.data.access_token,
-                    });
-
-                    console.log(response.data);
-
-                    localStorage.setItem(
-                        "access_token",
-                        response.data.access_token
-                    );
-                    localStorage.setItem(
-                        "refresh_token",
-                        response.data.refresh_token
-                    );
-
+                if (response.ok) {
+                    let data = await response.json();
+                    console.log(data);
+                    localStorage.setItem("token", data.token);
                     toast.success("Logindan o'tish muvaffaqiyatli bo'ldi");
+                    navigate("/");
+                } else {
+                    let errorData = await response.json();
+                    console.error("Error:", errorData);
+                    throw new Error(errorData.message || "Xatolik yuz berdi");
                 }
             } else {
-                throw new Error("Xatolik yuz berdi");
+                throw new Error("Email yoki parol xatolari mavjud");
             }
         } catch (err) {
-            if (err.response) {
-                toast.error(err.response.data.message);
-            } else {
-                toast.error(err.message);
-            }
-        } finally {
-            dispatch({ type: "LOADING", loading: false });
+            toast.error(err.message);
         }
     };
 
     return (
         <div className="auth">
-            <select onChange={changeLangHandler}>
-                <option value="en">English</option>
-                <option value="uz">Uzbek</option>
-            </select>
             <div className="form-container">
                 <div className="form-wrapper">
                     <h2 className="auth-title">Login</h2>
@@ -103,11 +77,8 @@ const Login = ({ changeLang }) => {
                             required
                         />
                         <ul>
-                            {emailErrors.gmail && (
-                                <li>{t("At least 3 characters")}</li>
-                            )}
                             {emailErrors.length && (
-                                <li>{t("Enter a valid email (gmail.com)")}</li>
+                                <li>At least 3 characters</li>
                             )}
                         </ul>
                         <input
@@ -118,18 +89,16 @@ const Login = ({ changeLang }) => {
                         />
                         <ul>
                             {passwordErrors.uppercase && (
-                                <li>{t("At least one uppercase letter")}</li>
+                                <li>At least one uppercase letter</li>
                             )}
-                            {passwordErrors.lovercase && (
-                                <li>{t("At least one lovercase letter")}</li>
+                            {passwordErrors.lowercase && (
+                                <li>At least one lowercase letter</li>
                             )}
                             {passwordErrors.length && (
-                                <li>{t("At least 8 characters")}</li>
+                                <li>At least 8 characters</li>
                             )}
                         </ul>
-                        <Button type="submit" loading={state.loading}>
-                            Login
-                        </Button>
+                        <Button type="submit">Login</Button>
                     </form>
                 </div>
             </div>

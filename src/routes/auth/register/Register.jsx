@@ -1,7 +1,6 @@
 import "./Register.css";
 import Button from "../../../utils/button/Button";
 import { useEffect, useState, useContext } from "react";
-import AppContext from "../../../context/store/index";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 
@@ -13,11 +12,6 @@ const Register = () => {
         uppercase: true,
         lovercase: true,
         length: true,
-    });
-
-    let [usernameErrors, setUsernameErrors] = useState({
-        length: true,
-        capitalLetter: true,
     });
 
     let [username, setUsername] = useState("");
@@ -81,18 +75,7 @@ const Register = () => {
 
                     console.log(response);
 
-                    delete response.data.password;
-
-                    dispatch({
-                        type: "REGISTER",
-                        user: response,
-                    });
-
-                    toast.success("Muvaffaqiyatli ro'yhatdan o'tdingiz");
-
-                    if (response.status === 200) {
-                        document.location.href = "/login";
-                    }
+                    document.location.href = "/login";
                 }
             } else {
                 throw new Error("Xatolik yuz berdi");

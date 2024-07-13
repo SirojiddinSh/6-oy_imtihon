@@ -3,12 +3,12 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
-import StateProvider from "./context/provider/StateProvider.jsx";
+// import StateProvider from "./context/provider/StateProvider.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
-        <StateProvider>
-            <App />
-        </StateProvider>
+        {/* <StateProvider> */}
+        <App />
+        {/* </StateProvider> */}
     </BrowserRouter>
 );

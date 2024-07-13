@@ -28,7 +28,7 @@ const Nav = () => {
                                 <option value="ru">RU</option>
                                 <option value="en">EN</option>
                             </select>
-                            <NavLink to="/register">Register</NavLink>
+                            <NavLink to="/register">{t("Register")}</NavLink>
                         </div>
                     </div>
                 </Container>
@@ -36,12 +36,9 @@ const Nav = () => {
             <Container>
                 <div className="nav__ul">
                     <ul>
-                        {/* <li>
-                                <NavLink to="/">Home</NavLink>
-                            </li> */}
                         <li className="profile">
                             <NavLink to="/profile">
-                                <HiOutlineUser /> My profile
+                                <HiOutlineUser /> {t("My profile")}
                             </NavLink>
                         </li>
                         <li className="blue_icon">
