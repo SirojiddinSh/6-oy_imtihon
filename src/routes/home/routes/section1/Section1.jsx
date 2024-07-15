@@ -4,10 +4,11 @@ import Container from "../../../../utils/container/Container";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import blueButton from "../../../../images/blue-button.png";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
 
 let Section1 = () => {
+    let dispatch = useDispatch();
     const { t } = useTranslation();
 
     let navigate = useNavigate();
@@ -109,7 +110,16 @@ let Section1 = () => {
                                         )}
                                     </div>
                                     <div className="section1__card-button2">
-                                        <img src={blueButton} alt="" />
+                                        <button
+                                            onClick={() =>
+                                                dispatch({
+                                                    type: "ADD_TO_CART",
+                                                    payload: product,
+                                                })
+                                            }
+                                        >
+                                            <img src={blueButton} alt="" />
+                                        </button>
                                     </div>
                                 </div>
                             </div>

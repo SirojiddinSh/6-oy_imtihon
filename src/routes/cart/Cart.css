@@ -1,0 +1,99 @@
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table thead th {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0px;
+}
+
+.cart-table .product {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 0px;
+}
+
+thead tr {
+    border-bottom: 2px solid #ddd;
+    text-align: left;
+}
+
+tbody tr {
+    border-bottom: 2px solid #ddd;
+}
+
+.button__price div {
+    display: flex;
+    align-items: center;
+}
+
+.button__price .button1 {
+    background-color: #ddd;
+    border: none;
+    outline: none;
+    border-radius: 5px 0px 0px 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.button__price .button2 {
+    background-color: #ddd;
+    border: none;
+    outline: none;
+    border-radius: 0px 5px 5px 0px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.button__price span {
+    background-color: #ddd;
+    padding: 2.5px 10px;
+}
+
+.all_price {
+    padding: 60px 0px 80px 0px;
+}
+
+.all_price_container {
+    width: 495px;
+    margin-left: 900px;
+}
+
+.all_price .price {
+    display: flex;
+    align-items: center;
+    gap: 200px;
+    padding-bottom: 20px;
+}
+
+.hr {
+    width: 360px;
+    border-bottom: 1px solid #ddd;
+}
+
+.all_price .price div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.all_price .total {
+    display: flex;
+    align-items: center;
+    gap: 260px;
+    margin-top: 20px;
+}
+
+.all_price_container button {
+    width: 360px;
+    height: 50px;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}

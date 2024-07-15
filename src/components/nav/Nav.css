@@ -37,12 +37,11 @@
 }
 
 .nav__ul {
+    width: 100%;
+    position: sticky;
+    top: 0;
     padding: 20px 0px 25px 0px;
     padding-top: 40px;
-}
-
-.nav__ul {
-    width: 100%;
 }
 
 .nav__ul ul {
@@ -100,4 +99,28 @@
 .cart svg {
     width: 25px;
     height: 25px;
+}
+
+.nav__ul .cart {
+    position: relative;
+}
+
+.nav__ul .cart .icon {
+    position: absolute;
+    transform: rotate(-2deg);
+}
+
+.nav__ul .cart span {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    top: 15px;
+    left: 13px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
 }

@@ -3,13 +3,13 @@ import { GrCart } from "react-icons/gr";
 import "./Nav.css";
 import Container from "../../utils/container/Container";
 import { useTranslation } from "react-i18next";
-import i18n from "../../locales/i18next";
 import { NavLink } from "react-router-dom";
 import Icon from "../../utils/icon/Icon";
+import { useSelector } from "react-redux";
 
 const Nav = () => {
-    let { t } = useTranslation();
-    let data = useTranslation();
+    const { t, i18n } = useTranslation();
+    const length = useSelector((state) => state.cart?.length || 0);
 
     return (
         <nav>
@@ -19,7 +19,7 @@ const Nav = () => {
                         <div className="nav__div">
                             <select
                                 className="language-select"
-                                defaultValue={data.i18n.language}
+                                defaultValue={i18n.language}
                                 onChange={(e) =>
                                     i18n.changeLanguage(e.target.value)
                                 }
@@ -37,7 +37,7 @@ const Nav = () => {
                 <div className="nav__ul">
                     <ul>
                         <li className="profile">
-                            <NavLink to="/profile">
+                            <NavLink to="/">
                                 <HiOutlineUser /> {t("My profile")}
                             </NavLink>
                         </li>
@@ -49,7 +49,8 @@ const Nav = () => {
                         </li>
                         <li className="cart">
                             <NavLink to="/cart">
-                                <GrCart />
+                                <GrCart className="icon" />
+                                <span>{length}</span>
                             </NavLink>
                         </li>
                     </ul>
